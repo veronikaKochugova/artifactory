@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: pravega-influxdb-svc
+  namespace: nautilus-pravega
+spec:
+  selector:
+    app: nautilus-pravega-influxdb
+  type: LoadBalancer
+  ports:
+  - name: rest
+    protocol: TCP
+    port: 8086
+    targetPort: 8086
